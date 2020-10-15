@@ -1,24 +1,15 @@
-# Creation of login form and registration
+# Studily - [Visit the website!](https://cmoral58.github.io/student-app/)
 
-This simple application using flutter (dart language) has the registration of a user, and their login. The application uses a REST service, which will present an infinite list of images on the home screen, if the user has performed successfully login. (URL: https://jsonplaceholder.typicode.com )
 
-## Creation of login form and registration
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+## Description
 
-1- Create a basic login with SQLite;
+Studily is an application made for students created by students. This application will be to combat student issues like disorganization, failing to manage money, inability to stay healthy/active, poor academic achievements, poor sleeping habits, and procrastination.
 
-2- Create registration screen;
 
-3- Creating database;
+# Sustainability Goal
 
-4- Accessing the database;
-
-5- Make requests to a server.
-
-### Images
-
-<img src="https://raw.githubusercontent.com/latinosamuel/Flutter-Sqflite/master/images/login_screen.png" width="250" height="400"> | <img src="https://raw.githubusercontent.com/latinosamuel/Flutter-Sqflite/master/images/register_screen.png" width="250" height="400"> | <img src="https://raw.githubusercontent.com/latinosamuel/Flutter-Sqflite/master/images/home_screen.png" width="250" height="400">
+Ensuring healthy lives and promoting well-being at all ages is essential to sustainable development. With Studily, students will be able to better maintain their physical and mental health. Students have several issues in their time in school and outside of it, ranging from them being unable to manage money, not being organized, having poor grades, having poor sleep and eating habits, and procrastination. My investigation method will include an app in which select students will be able to track such problems (i.e. track their budget, organize their tasks, etc.)
 
 ### Installing
 
