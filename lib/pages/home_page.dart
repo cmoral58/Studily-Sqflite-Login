@@ -1,5 +1,5 @@
-import 'package:Studily/pages/welcome/welcome.dart';
 import 'package:flutter/material.dart';
+import 'package:Studily/pages/welcome/welcome.dart';
 
 void main() => runApp(HomePage());
 
@@ -9,23 +9,37 @@ class HomePage extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Stack(
       children: <Widget>[
-        new Container(
-          height: double.infinity,
-          width: double.infinity,
-          decoration: BoxDecoration(
-            image: new DecorationImage(
-              image: new AssetImage('assets/WaveImages/HomeScreenBubbles.png'),
-              fit: BoxFit.cover,
-            ),
-          ),
-        ),
         Scaffold(
           body: Container(
             child: HomePageBody(),
             color: Colors.transparent,
           ),
+        ),
+      ],
+    );
+  }
+}
+
+class HomePageBody extends StatelessWidget {
+  // final Widget child;
+  // const HomePageBody({
+  //   Key key,
+  //   @required this.child,
+  // }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: <Widget>[
+        Scaffold(
+          extendBodyBehindAppBar: true,
+          body: Container(
+            child: HomePageBackground(child: null),
+            color: Colors.transparent,
+          ),
           appBar: AppBar(
             automaticallyImplyLeading: false,
+            toolbarHeight: 80,
             title: Padding(
               padding: EdgeInsets.symmetric(
                 horizontal: 15,
@@ -34,7 +48,7 @@ class HomePage extends StatelessWidget {
               child: Builder(
                 builder: (context) => Ink(
                   decoration: ShapeDecoration(
-                    color: Color(0xff9891FF).withOpacity(0.4),
+                    color: Colors.white.withOpacity(0.2),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(Radius.circular(10)),
                     ),
@@ -42,7 +56,7 @@ class HomePage extends StatelessWidget {
                   child: IconButton(
                     icon: Icon(
                       Icons.menu,
-                      color: Color(0xff6159E6),
+                      color: Colors.white.withOpacity(0.8),
                       size: 30,
                     ),
                     onPressed: () => Scaffold.of(context).openDrawer(),
@@ -58,21 +72,26 @@ class HomePage extends StatelessWidget {
           drawer: Drawer(
             child: Column(
               children: <Widget>[
-                SizedBox(
-                  height: 30,
-                ),
+                // SizedBox(
+                //   height: 30,
+                // ),
                 DrawerHeader(
                   child: Container(
                     height: 142,
                     width: MediaQuery.of(context).size.width,
                     child: Image.asset(
                       "assets/Studily_avatar.png",
-                      height: 70, // These things also do nothing
-                      width: 70, // These things also do nothing
+                      height: 50, // These things also do nothing
+                      width: 50, // These things also do nothing
                     ),
                   ),
                   decoration: BoxDecoration(
-                    color: Colors.transparent,
+                    // borderRadius: BorderRadius.all(Radius.circular(10)),
+                    borderRadius: BorderRadius.only(
+                      bottomRight: Radius.circular(50),
+                      bottomLeft: Radius.circular(50),
+                    ),
+                    color: Color(0xff6159E6),
                   ),
                 ),
                 SizedBox(
@@ -156,21 +175,11 @@ class HomePage extends StatelessWidget {
         ),
       ],
     );
-  }
-}
-
-class HomePageBody extends StatelessWidget {
-  // final Widget child;
-  // const HomePageBody({
-  //   Key key,
-  //   @required this.child,
-  // }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return HomePageBackground(
-      child: Scaffold(),
-    );
+    // return HomePageBackground(
+    //   Scaffold(
+    //     backgroundColor: Colors.white,
+    //   ),
+    // );
   }
 }
 
@@ -184,7 +193,6 @@ class HomePageBackground extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-
     return Container(
       height: size.height,
       width: double.infinity,
@@ -192,18 +200,71 @@ class HomePageBackground extends StatelessWidget {
         alignment: Alignment.center,
         children: <Widget>[
           Positioned(
-            top: 20,
+            top: 0,
+            child: Image.asset('assets/WaveImages/HomeScreenBubbles.png'),
+          ),
+          Positioned(
+            top: 150,
+            // left: 20,
             child: Text(
               "Welcome back!",
               style: TextStyle(
                 fontSize: 30,
-                color: Color(0xff6159E6),
+                // color: Color(0xff6159E6),
+                fontFamily: 'Roboto',
+                color: Colors.white,
+              ),
+            ),
+          ),
+          Positioned(
+            top: 0,
+            right: 0,
+            child: Material(
+              borderRadius: BorderRadius.circular(500),
+              child: InkWell(
+                borderRadius: BorderRadius.circular(500),
+                splashColor: Colors.black45,
+                onTap: () {},
+                child: CircleAvatar(
+                  radius: 50,
+                  backgroundColor: Colors.black,
+                  child: Image.asset(
+                      'assets/undraw_male_avatar_323b-removebg-preview.png'),
+                  // child: Icon(
+                  //   Icons.arrow_back,
+                  //   color: Color(0xff6159E6),
+                  // ),
+                ),
+              ),
+            ),
+          ),
+          Center(
+            child: Container(
+              alignment: AlignmentDirectional(0.0, 1.0),
+              child: Container(
+                height: size.height / 1.8,
+                // color: Colors.white,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(50),
+                    topLeft: Radius.circular(50),
+                  ),
+                ),
               ),
             ),
           ),
           // Positioned(
-          //   top: 0,
-          //   child: Image.asset('assets/WaveImages/HomeScreenBubbles.png'),
+          //   child: Center(
+          //       // height: size.height / 1.2,
+          //       // color: Colors.black,
+          //       // decoration: BoxDecoration(
+          //       //   borderRadius: BorderRadius.only(
+          //       //     topLeft: Radius.circular(20),
+          //       //   ),
+          //       //   color: Colors.transparent,
+          //       // ),
+          //       ),
           // ),
         ],
       ),
