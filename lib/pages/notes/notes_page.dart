@@ -35,46 +35,39 @@ class _NotesPageState extends State<NotesPage> {
                       // ),
                       child: Row(
                         children: [
-                          // InkWell(
-                          //   onTap: () {
-                          //     Navigator.pop(context);
-                          //   },
-                          //   child: Padding(
-                          //     padding: const EdgeInsets.all(8.0),
-                          //     child: Image(
-                          //       image: AssetImage(
-                          //           'assets/images/back_arrow_icon.png'),
-                          //     ),
-                          //   ),
-                          // ),
-                          Builder(
-                            builder: (context) => Ink(
-                              decoration: ShapeDecoration(
-                                // color: Color(0xFF211551).withOpacity(0.2),
-                                color: Color(0xFF211551),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(10)),
-                                ),
-                              ),
-                              child: IconButton(
-                                icon: Icon(
-                                  Icons.arrow_back_rounded,
-
-                                  // color: Colors.white.withOpacity(0.8),
-                                  color: Color(0xFF211551).withOpacity(0.8),
-                                  size: 30,
-                                ),
-                                onPressed: () => Navigator.pop(context),
+                          InkWell(
+                            onTap: () {
+                              Navigator.pop(context);
+                            },
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Image(
+                                image: AssetImage(
+                                    'assets/images/back_arrow_icon.png'),
                               ),
                             ),
                           ),
-                          // FlatButton.icon(
-                          //   onPressed: () {
-                          //     Navigator.pop(context);
-                          //   },
-                          //   icon: Icon(Icons.arrow_back),
-                          //   label: Text(''),
+                          // Builder(
+                          //   builder: (context) => Ink(
+                          //     decoration: ShapeDecoration(
+                          //       // color: Color(0xFF211551).withOpacity(0.2),
+                          //       color: Color(0xFF211551),
+                          //       shape: RoundedRectangleBorder(
+                          //         borderRadius:
+                          //             BorderRadius.all(Radius.circular(10)),
+                          //       ),
+                          //     ),
+                          //     child: IconButton(
+                          //       icon: Icon(
+                          //         Icons.arrow_back_rounded,
+
+                          //         // color: Colors.white.withOpacity(0.8),
+                          //         color: Color(0xFF211551).withOpacity(0.8),
+                          //         size: 30,
+                          //       ),
+                          //       onPressed: () => Navigator.pop(context),
+                          //     ),
+                          //   ),
                           // ),
 
                           Expanded(
