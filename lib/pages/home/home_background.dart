@@ -105,8 +105,15 @@ class HomePageBackground extends StatelessWidget {
         children: <Widget>[
           Positioned(
             top: 0,
-            child: Image.asset('assets/WaveImages/HomeScreenBubbles.png'),
+            // child: Image.asset('assets/WaveImages/HomeScreenBubbles.png'),
+            child: Image.asset(
+              'assets/WaveImages/HomeScreenWaveBubble.png',
+              height: size.height * 0.8,
+            ),
           ),
+
+          // Uncomment this to show the avatar
+
           Positioned(
             top: 50,
             right: 25,
@@ -125,26 +132,69 @@ class HomePageBackground extends StatelessWidget {
               ),
             ),
           ),
+
           Positioned(
-            top: 150,
-            left: 30,
+            top: 75,
+            left: 80,
             child: Text(
-              "Welcome back!",
+              'Studily',
               style: TextStyle(
-                fontSize: 25,
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
                 color: Colors.white,
               ),
             ),
           ),
+
+          // Uncomment/Comment this to display/hide 'Welcome back' message
+
+          Positioned(
+            top: 180,
+            left: 30,
+            child: Text(
+              "Welcome back!",
+              style: TextStyle(
+                fontSize: 28,
+                fontWeight: FontWeight.bold,
+                // color: Colors.white,
+                color: Color(0xff6159E6),
+              ),
+            ),
+          ),
+
+          Positioned(
+            top: 215,
+            left: 60,
+            child: Text(
+              "Thank you for using Studily!",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+                // color: Colors.white,
+                color: Color(0xff9891FF),
+              ),
+            ),
+          ),
+
           Center(
             child: new Container(
               width: double.infinity,
               alignment: AlignmentDirectional(0.0, 1.0),
               child: Container(
                 width: double.infinity, // This affects the white container
-                height: size.height / 1.6,
+                // height: size.height / 1.6,
+                height: size.height / 1.7,
                 // color: Colors.white,
                 decoration: BoxDecoration(
+                  // Box shadow for container
+                  boxShadow: [
+                    BoxShadow(
+                      // color: Colors.grey,
+                      color: Color(0xff9891FF),
+                      offset: Offset(0.0, 1.0), //(x,y)
+                      blurRadius: 10.0,
+                    ),
+                  ],
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
                     topRight: Radius.circular(50),
@@ -166,7 +216,8 @@ class HomePageBackground extends StatelessWidget {
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(20),
                                 ),
-                                color: Color(0xff6159E6),
+                                // color: Color(0xff6159E6),
+                                color: Color(0xff9891FF),
                                 child: Padding(
                                   padding: const EdgeInsets.all(8.0),
                                   child: Row(
@@ -302,7 +353,8 @@ class HomePageBackground extends StatelessWidget {
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(20),
                                 ),
-                                color: Color(0xff6159E6),
+                                // color: Color(0xff6159E6),
+                                color: Color(0xff9891FF),
                                 child: Padding(
                                   padding: const EdgeInsets.all(8.0),
                                   child: Row(

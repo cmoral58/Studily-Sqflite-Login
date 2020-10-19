@@ -23,22 +23,32 @@ class HomePageBody extends StatelessWidget {
               // Translucent menu item [child: Builder()]
               child: Builder(
                 builder: (context) => Ink(
-                  decoration: ShapeDecoration(
-                    color: Colors.white.withOpacity(0.2),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(10)),
-                    ),
-                  ),
-                  child: IconButton(
-                    icon: Image(
-                      image: AssetImage('assets/logo/studily-logo.png'),
-                    ),
-                    // icon: Icon(
-                    // Icons.menu,
-                    // color: Colors.white.withOpacity(0.8),
-                    // size: 30,
-                    // ),
-                    onPressed: () => Scaffold.of(context).openDrawer(),
+                  //     // Uncomment this to add accessability to the drawer
+
+                  //     // decoration: ShapeDecoration(
+                  //     //   color: Colors.white.withOpacity(0.2),
+                  //     //   shape: RoundedRectangleBorder(
+                  //     //     borderRadius: BorderRadius.all(Radius.circular(10)),
+                  //     //   ),
+                  //     // ),
+                  //     // child: IconButton(
+                  //     //   icon: Image(
+                  //     //     image: AssetImage('assets/logo/studily-logo.png'),
+                  //     //   ),
+                  //     //   // icon: Icon(
+                  //     //   // Icons.menu,
+                  //     //   // color: Colors.white.withOpacity(0.8),
+                  //     //   // size: 30,
+                  //     //   // ),
+                  //     //   onPressed: () => Scaffold.of(context).openDrawer(),
+                  //     // ),
+
+                  //     // This just adds the logo
+
+                  child: Image(
+                    image: AssetImage('assets/logo/studily-logo.png'),
+                    height: 50,
+                    width: 50,
                   ),
                 ),
               ),
@@ -51,17 +61,12 @@ class HomePageBody extends StatelessWidget {
           drawer: Drawer(
             child: Column(
               children: <Widget>[
-                // SizedBox(
-                //   height: 30,
-                // ),
                 DrawerHeader(
                   child: Container(
                     height: 142,
                     width: MediaQuery.of(context).size.width,
                     child: Image.asset(
                       "assets/Studily_avatar.png",
-                      height: 50, // These things also do nothing
-                      width: 50, // These things also do nothing
                     ),
                   ),
                   decoration: BoxDecoration(
