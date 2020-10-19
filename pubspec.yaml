@@ -30,6 +30,7 @@ dependencies:
   easy_dialog: ^1.0.5
   syncfusion_flutter_calendar: ^18.3.40
   get_it: ^5.0.1
+  page_transition: ^1.1.7+2
 
 dev_dependencies:
   flutter_test:
@@ -41,8 +42,8 @@ dev_dependencies:
 flutter_icons:
   ios: true
   android: true
-  image_path_ios: "assets/Logo/studily-logo.png"
-  image_path_android: "assets/Logo/studily-logo.png"
+  image_path_ios: "assets/logo/studily-logo.png"
+  image_path_android: "assets/logo/studily-logo.png"
 # The following section is specific to Flutter.
 flutter:
 
@@ -54,14 +55,12 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/
+    - "assets/logo/studily-logo.png"
     - assets/images/
-    - assets/Icons/
     - assets/WelcomeScreenImages/
     - assets/LoginScreenImages/
     - assets/RegisterScreenImages/
     - assets/WaveImages/
-    - assets/sort-black-18dp/2x/outline_sort_black_18dp.png
-    - assets/sort-white-18dp/2x/
     
 
 

@@ -20,6 +20,7 @@ class HomePageBody extends StatelessWidget {
                 horizontal: 15,
                 vertical: 20,
               ),
+              // Translucent menu item [child: Builder()]
               child: Builder(
                 builder: (context) => Ink(
                   decoration: ShapeDecoration(
@@ -29,11 +30,14 @@ class HomePageBody extends StatelessWidget {
                     ),
                   ),
                   child: IconButton(
-                    icon: Icon(
-                      Icons.menu,
-                      color: Colors.white.withOpacity(0.8),
-                      size: 30,
+                    icon: Image(
+                      image: AssetImage('assets/logo/studily-logo.png'),
                     ),
+                    // icon: Icon(
+                    // Icons.menu,
+                    // color: Colors.white.withOpacity(0.8),
+                    // size: 30,
+                    // ),
                     onPressed: () => Scaffold.of(context).openDrawer(),
                   ),
                 ),

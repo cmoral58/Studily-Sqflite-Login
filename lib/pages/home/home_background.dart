@@ -2,7 +2,6 @@ import 'package:Studily/pages/health/health_page.dart';
 import 'package:Studily/pages/money/money_page.dart';
 import 'package:Studily/pages/notes/notes_page.dart';
 import 'package:Studily/pages/sleeping/sleeping_page.dart';
-import 'package:Studily/services/navigation_service.dart';
 import 'package:flutter/material.dart';
 import 'package:Studily/components/card_info.dart';
 
@@ -20,11 +19,11 @@ class HomePageBackground extends StatelessWidget {
         card_name: 'Notes/Todos',
         card_image:
             'assets/undraw_Personal_notebook_re_d7dc-removebg-preview.png',
-        card_bio: 'Todo Lists'),
+        card_bio: 'Add And Create Notes'),
     CardInfo(
         card_name: 'Sleeping Habits',
         card_image: 'assets/undraw_sleep_analysis_o5f9-removebg-preview.png',
-        card_bio: 'Track Sleeping Habits'),
+        card_bio: 'Track Your Sleeping Habits'),
     CardInfo(
         card_name: 'Health Tracker',
         card_image: 'assets/undraw_healthy_habit_bh5w-removebg-preview.png',
@@ -87,14 +86,6 @@ class HomePageBackground extends StatelessWidget {
                 ],
               ),
             ),
-            // This does nothing at the moment || My delete this could or replace it
-            // onTap: () {
-            //   // var index = cardInfo.length;
-            //   // ignore: unrelated_type_equality_checks
-            //   if (cardInfo[0].toString() == 'Notes/Todo') {
-            //     locator<NavigationService>().navigateTo('notes');
-            //   }
-            // },
           ),
         ),
       ),
@@ -141,7 +132,6 @@ class HomePageBackground extends StatelessWidget {
               "Welcome back!",
               style: TextStyle(
                 fontSize: 25,
-                fontFamily: 'Roboto',
                 color: Colors.white,
               ),
             ),
@@ -152,7 +142,7 @@ class HomePageBackground extends StatelessWidget {
               alignment: AlignmentDirectional(0.0, 1.0),
               child: Container(
                 width: double.infinity, // This affects the white container
-                height: size.height / 1.8,
+                height: size.height / 1.6,
                 // color: Colors.white,
                 decoration: BoxDecoration(
                   color: Colors.white,
@@ -167,7 +157,7 @@ class HomePageBackground extends StatelessWidget {
                       children: <Widget>[
                         GestureDetector(
                           child: Padding(
-                            padding: const EdgeInsets.all(4.0),
+                            padding: const EdgeInsets.all(8.0),
                             child: Container(
                               padding: EdgeInsets.only(top: 8.0),
                               height: 100.0,
@@ -200,6 +190,9 @@ class HomePageBackground extends StatelessWidget {
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
                                         children: <Widget>[
+                                          Padding(
+                                            padding: EdgeInsets.only(top: 10.0),
+                                          ),
                                           Text(
                                             cardInfo[0].card_name,
                                             style: TextStyle(
@@ -232,7 +225,7 @@ class HomePageBackground extends StatelessWidget {
                         ),
                         GestureDetector(
                           child: Padding(
-                            padding: const EdgeInsets.all(4.0),
+                            padding: const EdgeInsets.all(8.0),
                             child: Container(
                               padding: EdgeInsets.only(top: 8.0),
                               height: 100.0,
@@ -265,6 +258,9 @@ class HomePageBackground extends StatelessWidget {
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
                                         children: <Widget>[
+                                          Padding(
+                                            padding: EdgeInsets.only(top: 10.0),
+                                          ),
                                           Text(
                                             cardInfo[1].card_name,
                                             style: TextStyle(
@@ -297,7 +293,7 @@ class HomePageBackground extends StatelessWidget {
                         ),
                         GestureDetector(
                           child: Padding(
-                            padding: const EdgeInsets.all(4.0),
+                            padding: const EdgeInsets.all(8.0),
                             child: Container(
                               padding: EdgeInsets.only(top: 8.0),
                               height: 100.0,
@@ -330,6 +326,9 @@ class HomePageBackground extends StatelessWidget {
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
                                         children: <Widget>[
+                                          Padding(
+                                            padding: EdgeInsets.only(top: 10.0),
+                                          ),
                                           Text(
                                             cardInfo[2].card_name,
                                             style: TextStyle(
@@ -362,7 +361,7 @@ class HomePageBackground extends StatelessWidget {
                         ),
                         GestureDetector(
                           child: Padding(
-                            padding: const EdgeInsets.all(4.0),
+                            padding: const EdgeInsets.all(8.0),
                             child: Container(
                               padding: EdgeInsets.only(top: 8.0),
                               height: 100.0,
@@ -395,6 +394,9 @@ class HomePageBackground extends StatelessWidget {
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
                                         children: <Widget>[
+                                          Padding(
+                                            padding: EdgeInsets.only(top: 10.0),
+                                          ),
                                           Text(
                                             cardInfo[3].card_name,
                                             style: TextStyle(
