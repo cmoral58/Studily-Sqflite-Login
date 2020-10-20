@@ -22,11 +22,11 @@ class HomePageBackground extends StatelessWidget {
         card_bio: 'Add And Create Notes'),
     CardInfo(
         card_name: 'Sleeping Habits',
-        card_image: 'assets/undraw_sleep_analysis_o5f9-removebg-preview.png',
+        card_image: 'assets/undraw_sleep_analysis.png',
         card_bio: 'Track Your Sleeping Habits'),
     CardInfo(
         card_name: 'Health Tracker',
-        card_image: 'assets/undraw_healthy_habit_bh5w-removebg-preview.png',
+        card_image: 'assets/undraw_healthy_habit-removebg-preview.png',
         card_bio: 'Manage Your Health'),
     CardInfo(
         card_name: 'Manage Money',
@@ -201,287 +201,304 @@ class HomePageBackground extends StatelessWidget {
                     topLeft: Radius.circular(50),
                   ),
                 ),
-                child: Column(
-                  children: <Widget>[
-                    Column(
-                      children: <Widget>[
-                        GestureDetector(
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Container(
-                              padding: EdgeInsets.only(top: 8.0),
-                              height: 100.0,
-                              width: 350,
-                              child: new Card(
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                                // color: Color(0xff6159E6),
-                                color: Color(0xff9891FF),
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.vertical,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Column(
+                        children: <Widget>[
+                          Column(
+                            children: <Widget>[
+                              GestureDetector(
                                 child: Padding(
                                   padding: const EdgeInsets.all(8.0),
-                                  child: Row(
-                                    children: <Widget>[
-                                      Padding(
-                                        padding: const EdgeInsets.all(6.0),
-                                        child: Container(
-                                          height: 50.0,
-                                          width: 100.0,
-                                          decoration: new BoxDecoration(
-                                            shape: BoxShape.rectangle,
-                                            image: new DecorationImage(
-                                              fit: BoxFit.cover,
-                                              image: AssetImage(
-                                                  cardInfo[0].card_image),
+                                  child: Container(
+                                    padding: EdgeInsets.only(top: 8.0),
+                                    height: 100.0,
+                                    width: 350,
+                                    child: new Card(
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(20),
+                                      ),
+                                      // color: Color(0xff6159E6),
+                                      color: Color(0xff9891FF),
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: Row(
+                                          children: <Widget>[
+                                            Padding(
+                                              padding:
+                                                  const EdgeInsets.all(6.0),
+                                              child: Container(
+                                                height: 50.0,
+                                                width: 100.0,
+                                                decoration: new BoxDecoration(
+                                                  shape: BoxShape.rectangle,
+                                                  image: new DecorationImage(
+                                                    fit: BoxFit.cover,
+                                                    image: AssetImage(
+                                                        cardInfo[0].card_image),
+                                                  ),
+                                                ),
+                                              ),
                                             ),
-                                          ),
+                                            new Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: <Widget>[
+                                                Padding(
+                                                  padding: EdgeInsets.only(
+                                                      top: 10.0),
+                                                ),
+                                                Text(
+                                                  cardInfo[0].card_name,
+                                                  style: TextStyle(
+                                                    color: Colors.white,
+                                                    fontSize: 22,
+                                                    fontWeight: FontWeight.bold,
+                                                  ),
+                                                ),
+                                                Text(
+                                                  cardInfo[0].card_bio,
+                                                  style: TextStyle(
+                                                      color: Colors.white,
+                                                      fontSize: 12),
+                                                ),
+                                              ],
+                                            ),
+                                          ],
                                         ),
                                       ),
-                                      new Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: <Widget>[
-                                          Padding(
-                                            padding: EdgeInsets.only(top: 10.0),
-                                          ),
-                                          Text(
-                                            cardInfo[0].card_name,
-                                            style: TextStyle(
-                                              color: Colors.white,
-                                              fontSize: 22,
-                                              fontWeight: FontWeight.bold,
-                                            ),
-                                          ),
-                                          Text(
-                                            cardInfo[0].card_bio,
-                                            style: TextStyle(
-                                                color: Colors.white,
-                                                fontSize: 12),
-                                          ),
-                                        ],
-                                      ),
-                                    ],
+                                    ),
                                   ),
                                 ),
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => NotesPage()),
+                                  );
+                                },
                               ),
-                            ),
-                          ),
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => NotesPage()),
-                            );
-                          },
-                        ),
-                        GestureDetector(
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Container(
-                              padding: EdgeInsets.only(top: 8.0),
-                              height: 100.0,
-                              width: 350,
-                              child: new Card(
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                                color: Color(0xff6159E6),
+                              GestureDetector(
                                 child: Padding(
                                   padding: const EdgeInsets.all(8.0),
-                                  child: Row(
-                                    children: <Widget>[
-                                      Padding(
-                                        padding: const EdgeInsets.all(6.0),
-                                        child: Container(
-                                          height: 50.0,
-                                          width: 100.0,
-                                          decoration: new BoxDecoration(
-                                            shape: BoxShape.rectangle,
-                                            image: new DecorationImage(
-                                              fit: BoxFit.cover,
-                                              image: AssetImage(
-                                                  cardInfo[1].card_image),
+                                  child: Container(
+                                    padding: EdgeInsets.only(top: 8.0),
+                                    height: 100.0,
+                                    width: 350,
+                                    child: new Card(
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(20),
+                                      ),
+                                      color: Color(0xff6159E6),
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: Row(
+                                          children: <Widget>[
+                                            Padding(
+                                              padding:
+                                                  const EdgeInsets.all(6.0),
+                                              child: Container(
+                                                height: 50.0,
+                                                width: 100.0,
+                                                decoration: new BoxDecoration(
+                                                  shape: BoxShape.rectangle,
+                                                  image: new DecorationImage(
+                                                    // fit: BoxFit.cover,
+                                                    fit: BoxFit.fill,
+                                                    image: AssetImage(
+                                                        cardInfo[1].card_image),
+                                                  ),
+                                                ),
+                                              ),
                                             ),
-                                          ),
+                                            new Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: <Widget>[
+                                                Padding(
+                                                  padding: EdgeInsets.only(
+                                                      top: 10.0),
+                                                ),
+                                                Text(
+                                                  cardInfo[1].card_name,
+                                                  style: TextStyle(
+                                                    color: Colors.white,
+                                                    fontSize: 22,
+                                                    fontWeight: FontWeight.bold,
+                                                  ),
+                                                ),
+                                                Text(
+                                                  cardInfo[1].card_bio,
+                                                  style: TextStyle(
+                                                      color: Colors.white,
+                                                      fontSize: 12),
+                                                ),
+                                              ],
+                                            ),
+                                          ],
                                         ),
                                       ),
-                                      new Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: <Widget>[
-                                          Padding(
-                                            padding: EdgeInsets.only(top: 10.0),
-                                          ),
-                                          Text(
-                                            cardInfo[1].card_name,
-                                            style: TextStyle(
-                                              color: Colors.white,
-                                              fontSize: 22,
-                                              fontWeight: FontWeight.bold,
-                                            ),
-                                          ),
-                                          Text(
-                                            cardInfo[1].card_bio,
-                                            style: TextStyle(
-                                                color: Colors.white,
-                                                fontSize: 12),
-                                          ),
-                                        ],
-                                      ),
-                                    ],
+                                    ),
                                   ),
                                 ),
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => SleepingPage()),
+                                  );
+                                },
                               ),
-                            ),
-                          ),
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => SleepingPage()),
-                            );
-                          },
-                        ),
-                        GestureDetector(
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Container(
-                              padding: EdgeInsets.only(top: 8.0),
-                              height: 100.0,
-                              width: 350,
-                              child: new Card(
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                                // color: Color(0xff6159E6),
-                                color: Color(0xff9891FF),
+                              GestureDetector(
                                 child: Padding(
                                   padding: const EdgeInsets.all(8.0),
-                                  child: Row(
-                                    children: <Widget>[
-                                      Padding(
-                                        padding: const EdgeInsets.all(6.0),
-                                        child: Container(
-                                          height: 50.0,
-                                          width: 100.0,
-                                          decoration: new BoxDecoration(
-                                            shape: BoxShape.rectangle,
-                                            image: new DecorationImage(
-                                              fit: BoxFit.cover,
-                                              image: AssetImage(
-                                                  cardInfo[2].card_image),
+                                  child: Container(
+                                    padding: EdgeInsets.only(top: 8.0),
+                                    height: 100.0,
+                                    width: 350,
+                                    child: new Card(
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(20),
+                                      ),
+                                      // color: Color(0xff6159E6),
+                                      color: Color(0xff9891FF),
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: Row(
+                                          children: <Widget>[
+                                            Padding(
+                                              padding:
+                                                  const EdgeInsets.all(6.0),
+                                              child: Container(
+                                                height: 50.0,
+                                                width: 100.0,
+                                                decoration: new BoxDecoration(
+                                                  shape: BoxShape.rectangle,
+                                                  image: new DecorationImage(
+                                                    fit: BoxFit.cover,
+                                                    image: AssetImage(
+                                                        cardInfo[2].card_image),
+                                                  ),
+                                                ),
+                                              ),
                                             ),
-                                          ),
+                                            new Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: <Widget>[
+                                                Padding(
+                                                  padding: EdgeInsets.only(
+                                                      top: 10.0),
+                                                ),
+                                                Text(
+                                                  cardInfo[2].card_name,
+                                                  style: TextStyle(
+                                                    color: Colors.white,
+                                                    fontSize: 22,
+                                                    fontWeight: FontWeight.bold,
+                                                  ),
+                                                ),
+                                                Text(
+                                                  cardInfo[2].card_bio,
+                                                  style: TextStyle(
+                                                      color: Colors.white,
+                                                      fontSize: 12),
+                                                ),
+                                              ],
+                                            ),
+                                          ],
                                         ),
                                       ),
-                                      new Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: <Widget>[
-                                          Padding(
-                                            padding: EdgeInsets.only(top: 10.0),
-                                          ),
-                                          Text(
-                                            cardInfo[2].card_name,
-                                            style: TextStyle(
-                                              color: Colors.white,
-                                              fontSize: 22,
-                                              fontWeight: FontWeight.bold,
-                                            ),
-                                          ),
-                                          Text(
-                                            cardInfo[2].card_bio,
-                                            style: TextStyle(
-                                                color: Colors.white,
-                                                fontSize: 12),
-                                          ),
-                                        ],
-                                      ),
-                                    ],
+                                    ),
                                   ),
                                 ),
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => HealthPage()),
+                                  );
+                                },
                               ),
-                            ),
-                          ),
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => HealthPage()),
-                            );
-                          },
-                        ),
-                        GestureDetector(
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Container(
-                              padding: EdgeInsets.only(top: 8.0),
-                              height: 100.0,
-                              width: 350,
-                              child: new Card(
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                                color: Color(0xff6159E6),
+                              GestureDetector(
                                 child: Padding(
                                   padding: const EdgeInsets.all(8.0),
-                                  child: Row(
-                                    children: <Widget>[
-                                      Padding(
-                                        padding: const EdgeInsets.all(6.0),
-                                        child: Container(
-                                          height: 50.0,
-                                          width: 100.0,
-                                          decoration: new BoxDecoration(
-                                            shape: BoxShape.rectangle,
-                                            image: new DecorationImage(
-                                              fit: BoxFit.cover,
-                                              image: AssetImage(
-                                                  cardInfo[3].card_image),
+                                  child: Container(
+                                    padding: EdgeInsets.only(top: 8.0),
+                                    height: 100.0,
+                                    width: 350,
+                                    child: new Card(
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(20),
+                                      ),
+                                      color: Color(0xff6159E6),
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: Row(
+                                          children: <Widget>[
+                                            Padding(
+                                              padding:
+                                                  const EdgeInsets.all(6.0),
+                                              child: Container(
+                                                height: 50.0,
+                                                width: 100.0,
+                                                decoration: new BoxDecoration(
+                                                  shape: BoxShape.rectangle,
+                                                  image: new DecorationImage(
+                                                    fit: BoxFit.cover,
+                                                    image: AssetImage(
+                                                        cardInfo[3].card_image),
+                                                  ),
+                                                ),
+                                              ),
                                             ),
-                                          ),
+                                            new Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: <Widget>[
+                                                Padding(
+                                                  padding: EdgeInsets.only(
+                                                      top: 10.0),
+                                                ),
+                                                Text(
+                                                  cardInfo[3].card_name,
+                                                  style: TextStyle(
+                                                    color: Colors.white,
+                                                    fontSize: 22,
+                                                    fontWeight: FontWeight.bold,
+                                                  ),
+                                                ),
+                                                Text(
+                                                  cardInfo[3].card_bio,
+                                                  style: TextStyle(
+                                                      color: Colors.white,
+                                                      fontSize: 12),
+                                                ),
+                                              ],
+                                            ),
+                                          ],
                                         ),
                                       ),
-                                      new Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: <Widget>[
-                                          Padding(
-                                            padding: EdgeInsets.only(top: 10.0),
-                                          ),
-                                          Text(
-                                            cardInfo[3].card_name,
-                                            style: TextStyle(
-                                              color: Colors.white,
-                                              fontSize: 22,
-                                              fontWeight: FontWeight.bold,
-                                            ),
-                                          ),
-                                          Text(
-                                            cardInfo[3].card_bio,
-                                            style: TextStyle(
-                                                color: Colors.white,
-                                                fontSize: 12),
-                                          ),
-                                        ],
-                                      ),
-                                    ],
+                                    ),
                                   ),
                                 ),
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => MoneyPage()),
+                                  );
+                                },
                               ),
-                            ),
-                          ),
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => MoneyPage()),
-                            );
-                          },
-                        ),
-                      ],
-                    )
-                  ],
+                            ],
+                          )
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),

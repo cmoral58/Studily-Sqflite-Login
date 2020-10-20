@@ -32,6 +32,12 @@ class _RegisterPageState extends State<RegisterPage> {
     var registerBtn = new Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
+        Text(
+          "Already have an account? ",
+          style: TextStyle(
+            color: Color(0xff6159E6),
+          ),
+        ),
         GestureDetector(
           onTap: () {
             Navigator.push(
@@ -42,15 +48,11 @@ class _RegisterPageState extends State<RegisterPage> {
             );
           },
           child: new Text(
-            "Already have an account? ",
-            style: TextStyle(color: Color(0xff6159E6)),
+            "Sign In",
+            style: TextStyle(
+                color: Color(0xff6159E6), fontWeight: FontWeight.bold),
           ),
         ),
-        Text(
-          "Sign In",
-          style:
-              TextStyle(color: Color(0xff6159E6), fontWeight: FontWeight.bold),
-        )
       ],
     );
     var loginForm = new Column(

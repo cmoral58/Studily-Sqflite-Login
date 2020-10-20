@@ -70,18 +70,20 @@ class _LoginPageState extends State<LoginPage> implements LoginPageContract {
     var registerBtn = new Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
+        Text(
+          "Don't have an account? ",
+          style: TextStyle(
+            color: Color(0xff6159E6),
+          ),
+        ),
         GestureDetector(
           onTap: _register,
           child: new Text(
-            "Don't have an account? ",
-            style: TextStyle(color: Color(0xff6159E6)),
+            "Sign Up",
+            style: TextStyle(
+                color: Color(0xff6159E6), fontWeight: FontWeight.bold),
           ),
         ),
-        Text(
-          "Sign Up",
-          style:
-              TextStyle(color: Color(0xff6159E6), fontWeight: FontWeight.bold),
-        )
       ],
     );
     var loginForm = new Column(
