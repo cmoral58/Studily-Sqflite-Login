@@ -5,9 +5,9 @@ class SleepingPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        children: <Widget>[Text('Sleeping Page')],
+    return Scaffold(
+      body: Container(
+        child: Text('Sleeping Habits Page'),
       ),
     );
   }

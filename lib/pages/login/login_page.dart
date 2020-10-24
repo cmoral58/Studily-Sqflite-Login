@@ -86,111 +86,118 @@ class _LoginPageState extends State<LoginPage> implements LoginPageContract {
         ),
       ],
     );
-    var loginForm = new Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        // new Positioned(
-        //   top: 0,
-        //   left: 0,
-        //   child: Image.asset(
-        //     'assets/LoginScreenImages/TopLeftBubble.png',
-        //     width: size.width * 1.2,
-        //   ),
-        // ),
-        new SizedBox(
-          height: size.height * 0.1,
-        ),
-        new Text(
-          "Login",
-          style: TextStyle(
-              fontWeight: FontWeight.bold,
-              decoration: TextDecoration.underline,
-              fontSize: 26),
-        ),
-        new Image.asset(
-          'assets/LoginScreenImages/undraw_unlock_24mb.png',
-          width: size.width * 2,
-        ),
-        new Form(
-          key: formKey,
-          child: new Column(
-            children: <Widget>[
-              new Container(
-                margin: EdgeInsets.symmetric(vertical: 10),
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-                width: size.width * 0.8,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(25),
-                  border: Border.all(
-                    color: Color(0xff6159E6),
-                  ),
-                ),
-                child: new TextFormField(
-                  onSaved: (val) => _email = val,
-                  decoration: new InputDecoration(
-                      icon: Icon(
-                        Icons.person,
-                        color: Color(0xff6159E6),
+    var loginForm = new SingleChildScrollView(
+      scrollDirection: Axis.vertical,
+      child: new Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          // new Positioned(
+          //   top: 0,
+          //   left: 0,
+          //   child: Image.asset(
+          //     'assets/LoginScreenImages/TopLeftBubble.png',
+          //     width: size.width * 1.2,
+          //   ),
+          // ),
+          new SizedBox(
+            height: size.height * 0.1,
+          ),
+          new Text(
+            "Login",
+            style: TextStyle(
+                fontWeight: FontWeight.bold,
+                decoration: TextDecoration.underline,
+                fontSize: 26),
+          ),
+          new Image.asset(
+            'assets/LoginScreenImages/undraw_unlock_24mb.png',
+            width: size.width * 2,
+          ),
+          new Form(
+              key: formKey,
+              child: new SingleChildScrollView(
+                child: new Column(
+                  children: <Widget>[
+                    new Container(
+                      margin: EdgeInsets.symmetric(vertical: 10),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                      width: size.width * 0.8,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(25),
+                        border: Border.all(
+                          color: Color(0xff6159E6),
+                        ),
                       ),
-                      hintText: "Enter Email",
-                      // labelText: "Email",
-                      border: InputBorder.none),
-                ),
-              ),
-              new Container(
-                margin: EdgeInsets.symmetric(vertical: 10),
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-                width: size.width * 0.8,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(25),
-                  border: Border.all(
-                    color: Color(0xff6159E6),
-                  ),
-                ),
-                child: new TextFormField(
-                  obscureText: true,
-                  onSaved: (val) => _password = val,
-                  decoration: new InputDecoration(
-                      icon: Icon(
-                        Icons.lock,
-                        color: Color(0xff6159E6),
+                      child: new TextFormField(
+                        onSaved: (val) => _email = val,
+                        decoration: new InputDecoration(
+                            icon: Icon(
+                              Icons.person,
+                              color: Color(0xff6159E6),
+                            ),
+                            hintText: "Enter Email",
+                            // labelText: "Email",
+                            border: InputBorder.none),
                       ),
-                      hintText: "Enter Password",
-                      // labelText: "Password",
-                      border: InputBorder.none),
+                    ),
+                    new Container(
+                      margin: EdgeInsets.symmetric(vertical: 10),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                      width: size.width * 0.8,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(25),
+                        border: Border.all(
+                          color: Color(0xff6159E6),
+                        ),
+                      ),
+                      child: new TextFormField(
+                        obscureText: true,
+                        onSaved: (val) => _password = val,
+                        decoration: new InputDecoration(
+                            icon: Icon(
+                              Icons.lock,
+                              color: Color(0xff6159E6),
+                            ),
+                            hintText: "Enter Password",
+                            // labelText: "Password",
+                            border: InputBorder.none),
+                      ),
+                    )
+                  ],
                 ),
-              )
-            ],
+              )),
+          SizedBox(
+            height: size.height * 0.01,
           ),
-        ),
-        SizedBox(
-          height: size.height * 0.01,
-        ),
-        new Container(
-          margin: EdgeInsets.symmetric(vertical: 10),
-          width: size.width * 0.8,
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(29),
-            child: loginBtn,
+          new Container(
+            margin: EdgeInsets.symmetric(vertical: 10),
+            width: size.width * 0.8,
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(29),
+              child: loginBtn,
+            ),
           ),
-        ),
-        new Container(
-          margin: EdgeInsets.symmetric(vertical: 10),
-          width: size.width * 0.8,
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(29),
-            child: registerBtn,
+          new Container(
+            margin: EdgeInsets.symmetric(vertical: 10),
+            width: size.width * 0.8,
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(29),
+              child: registerBtn,
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
 
     return new Scaffold(
       key: scaffoldKey,
       resizeToAvoidBottomPadding: false,
       body: new SingleChildScrollView(
+        scrollDirection: Axis.vertical,
         child: new Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
