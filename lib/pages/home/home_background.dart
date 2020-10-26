@@ -4,6 +4,7 @@ import 'package:Studily/pages/notes/notes_page.dart';
 import 'package:Studily/pages/sleeping/sleeping_page.dart';
 import 'package:flutter/material.dart';
 import 'package:Studily/components/card_info.dart';
+import 'package:syncfusion_flutter_calendar/calendar.dart';
 
 // ignore: must_be_immutable
 class HomePageBackground extends StatelessWidget {
@@ -148,32 +149,82 @@ class HomePageBackground extends StatelessWidget {
 
           // Uncomment/Comment this to display/hide 'Welcome back' message
 
-          Positioned(
-            top: 180,
-            left: 30,
-            child: Text(
-              "Welcome back!",
-              style: TextStyle(
-                fontSize: 28,
-                fontWeight: FontWeight.bold,
-                // color: Colors.white,
-                color: Color(0xff6159E6),
-              ),
-            ),
-          ),
+          // Positioned(
+          //   top: 180,
+          //   left: 30,
+          //   child: Text(
+          //     "Welcome back!",
+          //     style: TextStyle(
+          //       fontSize: 28,
+          //       fontWeight: FontWeight.bold,
+          //       // color: Colors.white,
+          //       color: Color(0xff6159E6),
+          //     ),
+          //   ),
+          // ),
 
-          Positioned(
-            top: 215,
-            left: 60,
-            child: Text(
-              "Thank you for using Studily!",
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-                // color: Colors.white,
-                color: Color(0xff9891FF),
+          // Positioned(
+          //   top: 215,
+          //   left: 60,
+          //   child: Text(
+          //     "Thank you for using Studily!",
+          //     style: TextStyle(
+          //       fontSize: 24,
+          //       fontWeight: FontWeight.bold,
+          //       color: Color(0xff9891FF),
+          //     ),
+          //   ),
+          // ),
+
+          new Stack(
+            children: <Widget>[
+              Positioned(
+                bottom: 500,
+                child: new Container(
+                  height: size.height * 0.15,
+                  width: size.width * 1,
+                  child: Stack(
+                    children: <Widget>[
+                      SfCalendar(
+                        backgroundColor: Colors.transparent,
+                        view: CalendarView.month,
+                        viewHeaderStyle: ViewHeaderStyle(
+                          dateTextStyle: TextStyle(
+                            color: Color(0xff6159E6),
+                          ),
+                          dayTextStyle: TextStyle(
+                            color: Color(0xff6159E6),
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        headerStyle: CalendarHeaderStyle(
+                          textStyle: TextStyle(
+                            color: Color(0xff9891FF),
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        monthViewSettings: MonthViewSettings(
+                          agendaStyle: AgendaStyle(
+                            dateTextStyle: TextStyle(
+                              color: Color(0xff6159E6),
+                            ),
+                          ),
+                          monthCellStyle: MonthCellStyle(
+                            textStyle: TextStyle(
+                              color: Color(0xff6159E6),
+                            ),
+                          ),
+                          numberOfWeeksInView: 1,
+                          dayFormat: 'EEE',
+                          agendaViewHeight: 2,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               ),
-            ),
+            ],
           ),
 
           Center(

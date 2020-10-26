@@ -90,12 +90,13 @@ class _RegisterPageState extends State<RegisterPage> {
                 child: new TextFormField(
                   onSaved: (val) => _name = val,
                   decoration: new InputDecoration(
-                      icon: Icon(
-                        Icons.person_add_alt_1_outlined,
-                        color: Color(0xff6159E6),
-                      ),
-                      hintText: "Enter First Name",
-                      border: InputBorder.none),
+                    icon: Icon(
+                      Icons.person_add_alt_1_outlined,
+                      color: Color(0xff6159E6),
+                    ),
+                    hintText: "Enter First Name",
+                    border: InputBorder.none,
+                  ),
                 ),
               ),
               new Container(
@@ -135,12 +136,13 @@ class _RegisterPageState extends State<RegisterPage> {
                   obscureText: true,
                   onSaved: (val) => _password = val,
                   decoration: new InputDecoration(
-                      icon: Icon(
-                        Icons.lock,
-                        color: Color(0xff6159E6),
-                      ),
-                      hintText: "Enter Password",
-                      border: InputBorder.none),
+                    icon: Icon(
+                      Icons.lock,
+                      color: Color(0xff6159E6),
+                    ),
+                    hintText: "Enter Password",
+                    border: InputBorder.none,
+                  ),
                 ),
               )
             ],
@@ -189,7 +191,8 @@ class _RegisterPageState extends State<RegisterPage> {
       setState(() {
         _isLoading = true;
         form.save();
-        var user = new User(_name, _username, _password, null);
+        var user =
+            new User(_name.trim(), _username.trim(), _password.trim(), null);
         var db = new DatabaseHelper();
         db.saveUser(user);
         _isLoading = false;

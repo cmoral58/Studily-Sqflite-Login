@@ -34,7 +34,10 @@ class _LoginPageState extends State<LoginPage> implements LoginPageContract {
       setState(() {
         _isLoading = true;
         form.save();
-        _presenter.doLogin(_email, _password);
+        _presenter.doLogin(
+          _email.trim(),
+          _password.trim(),
+        );
       });
     }
   }

@@ -1,3 +1,4 @@
+import 'package:Studily/pages/sleeping/sleeping_body.dart';
 import 'package:flutter/material.dart';
 
 class SleepingPage extends StatelessWidget {
@@ -6,9 +7,7 @@ class SleepingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        child: Text('Sleeping Habits Page'),
-      ),
+      body: SleepingBody(),
     );
   }
 }

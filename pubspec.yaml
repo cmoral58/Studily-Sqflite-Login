@@ -26,12 +26,13 @@ dependencies:
   sqflite: ^0.11.0
   path_provider: ^0.4.0
   http: ^0.12.0
-  flutter_launcher_icons: ^0.8.1
+  flutter_launcher_icons: any
   easy_dialog: ^1.0.5
-  syncfusion_flutter_calendar: ^18.3.40
+  syncfusion_flutter_calendar: ^18.3.42
   get_it: ^5.0.1
   shared_preferences: ^0.5.12+2
   after_layout: ^1.0.7+2
+  intl: ^0.16.1
 
 dev_dependencies:
   flutter_test:

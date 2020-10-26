@@ -164,7 +164,7 @@ packages:
     source: hosted
     version: "2.1.18"
   intl:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: intl
       url: "https://pub.dartlang.org"
@@ -342,21 +342,21 @@ packages:
       name: syncfusion_flutter_calendar
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "18.3.40"
+    version: "18.3.42"
   syncfusion_flutter_core:
     dependency: transitive
     description:
       name: syncfusion_flutter_core
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "18.3.40"
+    version: "18.3.42"
   syncfusion_flutter_datepicker:
     dependency: transitive
     description:
       name: syncfusion_flutter_datepicker
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "18.3.40-beta"
+    version: "18.3.42-beta"
   synchronized:
     dependency: transitive
     description:
