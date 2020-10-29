@@ -1,7 +1,7 @@
+import 'package:Studily/pages/books/books_page.dart';
 import 'package:Studily/pages/health/health_page.dart';
 import 'package:Studily/pages/money/money_page.dart';
 import 'package:Studily/pages/notes/notes_page.dart';
-import 'package:Studily/pages/sleeping/sleeping_page.dart';
 import 'package:flutter/material.dart';
 import 'package:Studily/components/card_info.dart';
 import 'package:syncfusion_flutter_calendar/calendar.dart';
@@ -22,9 +22,9 @@ class HomePageBackground extends StatelessWidget {
             'assets/undraw_Personal_notebook_re_d7dc-removebg-preview.png',
         card_bio: 'Add And Create Notes'),
     CardInfo(
-        card_name: 'Sleeping Habits',
-        card_image: 'assets/undraw_sleep_analysis.png',
-        card_bio: 'Track Your Sleeping Habits'),
+        card_name: 'Books',
+        card_image: 'assets/undraw_Bibliophile_hwqc.png',
+        card_bio: 'Search for Books online'),
     CardInfo(
         card_name: 'Health Tracker',
         card_image: 'assets/undraw_healthy_habit-removebg-preview.png',
@@ -146,36 +146,6 @@ class HomePageBackground extends StatelessWidget {
               ),
             ),
           ),
-
-          // Uncomment/Comment this to display/hide 'Welcome back' message
-
-          // Positioned(
-          //   top: 180,
-          //   left: 30,
-          //   child: Text(
-          //     "Welcome back!",
-          //     style: TextStyle(
-          //       fontSize: 28,
-          //       fontWeight: FontWeight.bold,
-          //       // color: Colors.white,
-          //       color: Color(0xff6159E6),
-          //     ),
-          //   ),
-          // ),
-
-          // Positioned(
-          //   top: 215,
-          //   left: 60,
-          //   child: Text(
-          //     "Thank you for using Studily!",
-          //     style: TextStyle(
-          //       fontSize: 24,
-          //       fontWeight: FontWeight.bold,
-          //       color: Color(0xff9891FF),
-          //     ),
-          //   ),
-          // ),
-
           new Stack(
             children: <Widget>[
               Positioned(
@@ -399,7 +369,7 @@ class HomePageBackground extends StatelessWidget {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => SleepingPage()),
+                                        builder: (context) => BooksPage()),
                                   );
                                 },
                               ),

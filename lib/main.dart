@@ -7,6 +7,11 @@ import 'pages/login/login_page.dart';
 import 'pages/login/register.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:after_layout/after_layout.dart';
+import 'package:Studily/pages/formal/search_book_page_formal.dart';
+import 'package:Studily/pages/formal/stamp_collection_page_formal.dart';
+import 'package:Studily/pages/material/search_book_page_material.dart';
+import 'package:Studily/pages/material/stamp_collection_page_material.dart';
+import 'package:Studily/pages/universal/collection_page.dart';
 
 // void main() => runApp(MyApp());
 void main() {
@@ -20,6 +25,13 @@ final routes = {
   '/notes': (BuildContext context) => new NotesPage(),
   '/register': (BuildContext context) => new RegisterPage(),
   '/': (BuildContext context) => new WelcomeScreen(),
+  '/search_material': (BuildContext context) => new SearchBookPage(),
+  '/search_formal': (BuildContext context) => new SearchBookPageNew(),
+  '/collection': (BuildContext context) => new CollectionPage(),
+  '/stamp_collection_material': (BuildContext context) =>
+      new StampCollectionPage(),
+  '/stamp_collection_formal': (BuildContext context) =>
+      new StampCollectionFormalPage(),
 };
 
 class MyApp extends StatelessWidget {
