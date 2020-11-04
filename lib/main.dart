@@ -1,7 +1,13 @@
+import 'dart:convert';
+
+import 'package:Studily/data/rest-data.dart';
+import 'package:Studily/models/user.dart';
 import 'package:Studily/pages/notes/notes_page.dart';
 import 'package:Studily/pages/welcome/welcome.dart';
 import 'package:Studily/services/navigation_service.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'data/database-helper.dart';
 import 'pages/home/home_page.dart';
 import 'pages/login/login_page.dart';
 import 'pages/login/register.dart';
@@ -24,7 +30,8 @@ final routes = {
   '/home': (BuildContext context) => new HomePage(),
   '/notes': (BuildContext context) => new NotesPage(),
   '/register': (BuildContext context) => new RegisterPage(),
-  '/': (BuildContext context) => new WelcomeScreen(),
+  // '/': (BuildContext context) => new WelcomeScreen(),
+  // '/': (Builder context) => new LoggedIn(),
   '/search_material': (BuildContext context) => new SearchBookPage(),
   '/search_formal': (BuildContext context) => new SearchBookPageNew(),
   '/collection': (BuildContext context) => new CollectionPage(),
@@ -40,49 +47,75 @@ class MyApp extends StatelessWidget {
     return new MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Studily',
-      navigatorKey: locator<NavigationService>().navigatorKey,
-      onGenerateRoute: (routeSettings) {
-        switch (routeSettings.name) {
-          case 'notes':
-            return MaterialPageRoute(builder: (context) => NotesPage());
-          default:
-            return MaterialPageRoute(builder: (context) => HomePage());
-        }
-      },
+      home: HomePage(),
+      // navigatorKey: locator<NavigationService>().navigatorKey,
+      // onGenerateRoute: (routeSettings) {
+      //   switch (routeSettings.name) {
+      //     case 'notes':
+      //       return MaterialPageRoute(builder: (context) => NotesPage());
+      //     default:
+      //       return MaterialPageRoute(builder: (context) => HomePage());
+      //   }
+      // },
       routes: routes,
     );
   }
 }
 
-class Splash extends StatefulWidget {
+class LoggedIn extends StatefulWidget {
+  LoggedIn({Key key}) : super(key: key);
+
   @override
-  SplashState createState() => new SplashState();
+  _LoggedInState createState() => _LoggedInState();
 }
 
-class SplashState extends State<Splash> with AfterLayoutMixin<Splash> {
-  Future checkFirstSeen() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    bool _seen = (prefs.getBool('seen') ?? false);
-
-    if (_seen) {
-      Navigator.of(context).pushReplacement(
-          new MaterialPageRoute(builder: (context) => new HomePage()));
-    } else {
-      await prefs.setBool('seen', true);
-      Navigator.of(context).pushReplacement(
-          new MaterialPageRoute(builder: (context) => new WelcomeScreen()));
+class _LoggedInState extends State<LoggedIn> {
+  Future<bool> doLogin() async {
+    DatabaseHelper dbHelper = new DatabaseHelper();
+    String username = dbHelper.columnUserName;
+    String password = dbHelper.columnPassword;
+    try {
+      if (RestData().login(username, password) != null) {
+        // final user = User.map(obj[username]);
+        final user = User.map(username);
+        DatabaseHelper dbHelper = new DatabaseHelper();
+        await dbHelper.saveUser(user);
+        return true;
+      }
+    } catch (e) {
+      debugPrint(e.toString());
     }
+    return false;
+  }
+
+  Future<String> getLoggedInUser() async {
+    DatabaseHelper dbHelper = new DatabaseHelper();
+    User username = dbHelper.columnUserName as User;
+    bool isLoggedIn = await doLogin();
+    if (isLoggedIn) {
+      User user = (await DatabaseHelper().saveUser(username)) as User;
+      return user.name;
+    }
+    return null;
   }
 
   @override
-  void afterFirstLayout(BuildContext context) => checkFirstSeen();
-
-  @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      body: new Center(
-        child: new Text('Loading...'),
-      ),
+    return FutureBuilder(
+      future: getLoggedInUser(),
+      builder: (BuildContext context, AsyncSnapshot snapshot) {
+        if (snapshot.hasData) {
+          print(snapshot.error);
+          return Center(child: Text("Something..."));
+        } else if (snapshot.hasError) {
+          // just to show you how to fetch from db
+          if (snapshot.data != null) {
+            return Center(child: Text("Logged in token: ${snapshot.data}"));
+          }
+          return Center(child: Text("Not logged in"));
+        }
+        return Center(child: CircularProgressIndicator());
+      },
     );
   }
 }
